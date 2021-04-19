@@ -1,0 +1,71 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1912                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "400/uniform/functionObjects";
+    object      functionObjectProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+results
+{
+    residuals
+    {
+        scalar
+        {
+            Ux_initial      0.000123888;
+            Ux_final        7.26829e-06;
+            Uy_initial      0.00171005;
+            Uy_final        8.02423e-05;
+            p_initial       0.009791340000000001;
+            p_final         0.000378355;
+        }
+        label
+        {
+            Ux_iters        2;
+            Uy_iters        4;
+            p_iters         2;
+        }
+    }
+    forceCoeffs
+    {
+        scalar
+        {
+            Cd              0.003207346502779222;
+            Cs              0;
+            Cl              -0.00155316679995058;
+            CmRoll          9.707292499686169e-07;
+            CmPitch         0.0003568262734351464;
+            CmYaw           2.004591564235991e-06;
+            Cd(f)           0.00160464398063958;
+            Cd(r)           0.001602702522139642;
+            Cs(f)           2.004591564235991e-06;
+            Cs(r)           -2.004591564235991e-06;
+            Cl(f)           -0.0004197571265401436;
+            Cl(r)           -0.001133409673410436;
+        }
+    }
+    forces
+    {
+        vector
+        {
+            normalForce     ( 0 0 0 );
+            tangentialForce ( 0 0 0 );
+            porousForce     ( 0 0 0 );
+            normalMoment    ( 0 0 0 );
+            tangentialMoment ( 0 0 0 );
+            porousMoment    ( 0 0 0 );
+        }
+    }
+}
+
+
+// ************************************************************************* //

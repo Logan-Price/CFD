@@ -1,0 +1,59 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1912                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "420/uniform/functionObjects";
+    object      functionObjectProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+results
+{
+    residuals
+    {
+        scalar
+        {
+            Ux_initial      0.000470149;
+            Ux_final        4.37784e-05;
+            Uy_initial      0.00162789;
+            Uy_final        0.000147702;
+            p_initial       0.000603397;
+            p_final         5.86012e-05;
+        }
+        label
+        {
+            Ux_iters        10;
+            Uy_iters        11;
+            p_iters         16;
+        }
+    }
+    forceCoeffs
+    {
+        scalar
+        {
+            Cd              0.008249258974711154;
+            Cs              0;
+            Cl              5.535301441866625e-06;
+            CmRoll          -2.767650720933315e-11;
+            CmPitch         3.587546818464795e-06;
+            CmYaw           4.124629487355574e-08;
+            Cd(f)           0.00412462945967907;
+            Cd(r)           0.004124629515032084;
+            Cs(f)           4.124629487355574e-08;
+            Cs(r)           -4.124629487355574e-08;
+            Cl(f)           6.355197539398107e-06;
+            Cl(r)           -8.198960975314824e-07;
+        }
+    }
+}
+
+
+// ************************************************************************* //

@@ -1,0 +1,34 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.3.0                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+ forceCoeffs
+ {
+   type 		forceCoeffs;
+   libs 		("libforces.so");
+
+   writeControl 	timeStep;
+   writeInterval        10;
+   log 			true; //Dump to file
+
+   patches 		(plate); 
+   pName 		p; // name of the field
+   UName 		U; // name of the field
+   rho 		        rhoInf;
+   rhoInf 		1.2255; //density
+   CofR 		(0 0 0);
+   liftDir 		(0 1 0); //Direction for lift
+   dragDir 		(1 0 0); //Direction for Drag
+   pitchAxis 		(0 0 1); //Pitching axis
+   magUInf 		1; //Free stream velocity magnitude
+   lRef 		0.8; //reference length "frontal length at velocity inlet"
+   Aref 		0.0008; //reference area "frontal area at velocity inlet"
+ }
+
+
+
+// ************************************************************************* //

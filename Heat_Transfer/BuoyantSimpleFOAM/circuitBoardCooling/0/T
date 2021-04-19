@@ -1,0 +1,183 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1912                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    location    "0";
+    object      T;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 0 0 1 0 0 0];
+
+
+internalField   uniform 300;
+
+boundaryField
+{
+    floor
+    {
+        type            zeroGradient;
+    }
+    ceiling
+    {
+        type            zeroGradient;
+    }
+    inlet
+    {
+        type            fixedValue;
+        value           uniform 300;
+    }
+    outlet
+    {
+        type            inletOutlet;
+        inletValue      uniform 300;
+        value           uniform 300;
+    }
+    fixedWalls
+    {
+        type            empty;
+    }
+    baffleFacesThermoBaffle1D_master
+    {
+        type            compressible::thermalBaffle1D<hConstSolidThermoPhysics>;
+        refValue        uniform 300;
+        refGradient     uniform 0;
+        valueFraction   uniform 0;
+        value           uniform 300;
+        sampleMode      nearestPatchFace;
+        coupleGroup     baffleFacesThermoBaffle1D;
+        thickness       uniform 0.005;
+        qs              uniform 100;
+        specie
+        {
+            molWeight       20;
+        }
+        equationOfState
+        {
+            rho             10;
+        }
+        thermodynamics
+        {
+            Cp              10;
+            Hf              0;
+        }
+        transport
+        {
+            kappa           1;
+        }
+        qrPrevious      uniform 0;
+        qr              none;
+        qrRelaxation    1;
+    }
+    baffleFacesThermoBaffle1D_slave
+    {
+        type            compressible::thermalBaffle1D<hConstSolidThermoPhysics>;
+        refValue        uniform 300;
+        refGradient     uniform 0;
+        valueFraction   uniform 0;
+        value           uniform 300;
+        sampleMode      nearestPatchFace;
+        coupleGroup     baffleFacesThermoBaffle1D;
+        qrPrevious      uniform 0;
+        qr              none;
+        qrRelaxation    1;
+    }
+    baffleFacesThermoBaffle3D_master
+    {
+        type            compressible::thermalBaffle;
+        refValue        uniform 300;
+        refGradient     uniform 0;
+        valueFraction   uniform 1;
+        value           uniform 300;
+        Tnbr            T;
+        qrNbr           none;
+        qr              none;
+        thermalInertia  false;
+        thicknessLayers 0();
+        kappaLayers     0();
+        kappaMethod     fluidThermo;
+        kappa           none;
+        alphaAni        none;
+        alpha           none;
+        extrudeModel    linearNormal;
+        nLayers         50;
+        expansionRatio  1;
+        columnCells     false;
+        linearNormalCoeffs 
+        {
+            thickness       0.02;
+        }
+
+        region          baffle3DRegion;
+        active          yes;
+        thermoType      
+        {
+            type            heSolidThermo;
+            mixture         pureMixture;
+            transport       constIso;
+            thermo          hConst;
+            equationOfState rhoConst;
+            specie          specie;
+            energy          sensibleEnthalpy;
+        }
+
+        mixture         
+        {
+            specie
+            {
+                molWeight       20;
+            }
+            transport
+            {
+                kappa           0.01;
+            }
+            thermodynamics
+            {
+                Hf              0;
+                Cp              15;
+            }
+            equationOfState
+            {
+                rho             80;
+            }
+        }
+
+        radiation       
+        {
+            radiationModel  opaqueSolid;
+            absorptionEmissionModel none;
+            scatterModel    none;
+            transmissivityModel none;
+        }
+
+    }
+    baffleFacesThermoBaffle3D_slave
+    {
+        type            compressible::thermalBaffle;
+        refValue        uniform 300;
+        refGradient     uniform 0;
+        valueFraction   uniform 1;
+        value           uniform 300;
+        Tnbr            T;
+        qrNbr           none;
+        qr              none;
+        thermalInertia  false;
+        thicknessLayers 0();
+        kappaLayers     0();
+        kappaMethod     fluidThermo;
+        kappa           none;
+        alphaAni        none;
+        alpha           none;
+    }
+}
+
+
+// ************************************************************************* //

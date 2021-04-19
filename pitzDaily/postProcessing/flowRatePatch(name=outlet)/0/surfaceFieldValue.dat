@@ -1,0 +1,9 @@
+# Region type : patch outlet
+# Faces       : 57
+# Area        : 3.320000e-05
+# Scale factor: 1.000000e+00
+# Time        	sum(phi)
+0             
+100           	2.541207e-04
+200           	2.540233e-04
+280           	2.539965e-04

@@ -1,0 +1,238 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1912                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant/polyMesh";
+    object      meshMetaDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+surfaceFile     "multipleOrifices.stl";
+
+surfaceMeta
+{
+    nPoints         5936;
+    nFacets         11888;
+    nPatches        40;
+    nFeatureEdges   0;
+    patches
+    {
+        inlet_S42
+        {
+            type            empty;
+            nFacets         248;
+        }
+        outlet_S43
+        {
+            type            empty;
+            nFacets         248;
+        }
+        orifice01_S44
+        {
+            type            empty;
+            nFacets         72;
+        }
+        orifice01_S45
+        {
+            type            empty;
+            nFacets         134;
+        }
+        orifice01_S46
+        {
+            type            empty;
+            nFacets         134;
+        }
+        orifice02_S47
+        {
+            type            empty;
+            nFacets         100;
+        }
+        orifice02_S48
+        {
+            type            empty;
+            nFacets         148;
+        }
+        orifice02_S49
+        {
+            type            empty;
+            nFacets         148;
+        }
+        orifice03_S50
+        {
+            type            empty;
+            nFacets         170;
+        }
+        orifice03_S51
+        {
+            type            empty;
+            nFacets         144;
+        }
+        orifice03_S52
+        {
+            type            empty;
+            nFacets         170;
+        }
+        orifice04_S53
+        {
+            type            empty;
+            nFacets         88;
+        }
+        orifice04_S54
+        {
+            type            empty;
+            nFacets         142;
+        }
+        orifice04_S55
+        {
+            type            empty;
+            nFacets         142;
+        }
+        orifice05_S56
+        {
+            type            empty;
+            nFacets         154;
+        }
+        orifice05_S57
+        {
+            type            empty;
+            nFacets         112;
+        }
+        orifice05_S58
+        {
+            type            empty;
+            nFacets         154;
+        }
+        orifice06_S59
+        {
+            type            empty;
+            nFacets         186;
+        }
+        orifice06_S60
+        {
+            type            empty;
+            nFacets         186;
+        }
+        orifice06_S61
+        {
+            type            empty;
+            nFacets         176;
+        }
+        tubes_S62
+        {
+            type            empty;
+            nFacets         196;
+        }
+        tubes_S63
+        {
+            type            empty;
+            nFacets         196;
+        }
+        tubes_S64
+        {
+            type            empty;
+            nFacets         196;
+        }
+        tubes_S65
+        {
+            type            empty;
+            nFacets         196;
+        }
+        tubes_S66
+        {
+            type            empty;
+            nFacets         196;
+        }
+        tubes_S67
+        {
+            type            empty;
+            nFacets         196;
+        }
+        tubes_S68
+        {
+            type            empty;
+            nFacets         196;
+        }
+        tubes_S69
+        {
+            type            empty;
+            nFacets         196;
+        }
+        tubes_S70
+        {
+            type            empty;
+            nFacets         196;
+        }
+        tubes_S71
+        {
+            type            empty;
+            nFacets         196;
+        }
+        tubes_S72
+        {
+            type            empty;
+            nFacets         196;
+        }
+        tubes_S73
+        {
+            type            empty;
+            nFacets         196;
+        }
+        fixedWalls_S74
+        {
+            type            empty;
+            nFacets         500;
+        }
+        fixedWalls_S75
+        {
+            type            empty;
+            nFacets         1496;
+        }
+        fixedWalls_S76
+        {
+            type            empty;
+            nFacets         440;
+        }
+        fixedWalls_S77
+        {
+            type            empty;
+            nFacets         804;
+        }
+        fixedWalls_S78
+        {
+            type            empty;
+            nFacets         500;
+        }
+        fixedWalls_S79
+        {
+            type            empty;
+            nFacets         1496;
+        }
+        fixedWalls_S80
+        {
+            type            empty;
+            nFacets         440;
+        }
+        fixedWalls_S81
+        {
+            type            empty;
+            nFacets         804;
+        }
+    }
+    pointSubsets
+    {
+    }
+    facetSubsets
+    {
+    }
+    featureEdgeSubsets
+    {
+    }
+}

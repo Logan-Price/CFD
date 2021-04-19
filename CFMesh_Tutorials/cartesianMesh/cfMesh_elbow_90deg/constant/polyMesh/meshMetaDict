@@ -1,0 +1,83 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1912                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant/polyMesh";
+    object      meshMetaDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+surfaceFile     "elbow_90degree.stl";
+
+surfaceMeta
+{
+    nPoints         2577;
+    nFacets         5150;
+    nPatches        9;
+    nFeatureEdges   0;
+    patches
+    {
+        inlet_S73
+        {
+            type            empty;
+            nFacets         184;
+        }
+        outlet_S74
+        {
+            type            empty;
+            nFacets         184;
+        }
+        bendOuter_S75
+        {
+            type            empty;
+            nFacets         84;
+        }
+        bendOuter_S76
+        {
+            type            empty;
+            nFacets         1914;
+        }
+        bendInner_S77
+        {
+            type            empty;
+            nFacets         467;
+        }
+        ringArea_S78
+        {
+            type            empty;
+            nFacets         412;
+        }
+        fixedWalls_S79
+        {
+            type            empty;
+            nFacets         372;
+        }
+        fixedWalls_S80
+        {
+            type            empty;
+            nFacets         1114;
+        }
+        fixedWalls_S81
+        {
+            type            empty;
+            nFacets         419;
+        }
+    }
+    pointSubsets
+    {
+    }
+    facetSubsets
+    {
+    }
+    featureEdgeSubsets
+    {
+    }
+}

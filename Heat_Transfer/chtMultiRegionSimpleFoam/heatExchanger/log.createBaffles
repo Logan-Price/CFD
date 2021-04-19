@@ -1,0 +1,45 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1912                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : _f3950763fe-20191219 OPENFOAM=1912
+Arch   : "LSB;label=32;scalar=64"
+Exec   : createBaffles -region air -overwrite
+Date   : Nov 05 2020
+Time   : 20:26:15
+Host   : DESKTOP-7S8DQ3L
+PID    : 9842
+I/O    : uncollated
+Case   : /home/logankp/OpenFOAM/logankp-v1912/run/CFD/Heat_Transfer/chtMultiRegionSimpleFoam/heatExchanger
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh air for time = 0
+
+Reading baffle criteria from createBafflesDict
+
+Not converting faces on non-coupled patches.
+
+Reading geometric fields
+
+Created zone baffleFaces at index 1 with 360 faces
+Patch 'blades' already exists.  Only moving patch faces - type will remain the same
+Patch 'blades' already exists.  Only moving patch faces - type will remain the same
+Converted 360 faces into boundary faces in patches 1(blades)
+
+--> FOAM Warning : 
+    From function int main(int, char**)
+    in file createBaffles.C at line 867
+    Setting field on boundary faces to zero.
+You might have to edit these fields.
+Writing mesh to 0
+End
+

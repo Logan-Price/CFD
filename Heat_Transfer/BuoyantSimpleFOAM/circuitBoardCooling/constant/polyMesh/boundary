@@ -1,0 +1,87 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1912                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       polyBoundaryMesh;
+    location    "constant/polyMesh";
+    object      boundary;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+9
+(
+    floor
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          50;
+        startFace       3878;
+    }
+    ceiling
+    {
+        type            wall;
+        inGroups        1(wall);
+        nFaces          50;
+        startFace       3928;
+    }
+    inlet
+    {
+        type            patch;
+        nFaces          40;
+        startFace       3978;
+    }
+    outlet
+    {
+        type            patch;
+        nFaces          40;
+        startFace       4018;
+    }
+    fixedWalls
+    {
+        type            empty;
+        inGroups        1(empty);
+        nFaces          4000;
+        startFace       4058;
+    }
+    baffleFacesThermoBaffle1D_master
+    {
+        type            wall;
+        inGroups        2(wall baffleFacesThermoBaffle1D);
+        nFaces          16;
+        startFace       8058;
+    }
+    baffleFacesThermoBaffle1D_slave
+    {
+        type            wall;
+        inGroups        2(wall baffleFacesThermoBaffle1D);
+        nFaces          16;
+        startFace       8074;
+    }
+    baffleFacesThermoBaffle3D_master
+    {
+        type            mappedWall;
+        inGroups        3(wall mappedPatch baffleFacesThermoBaffle3DGroup_master);
+        nFaces          16;
+        startFace       8090;
+        sampleMode      nearestPatchFace;
+        coupleGroup     baffleFacesThermoBaffle3DGroup_master;
+    }
+    baffleFacesThermoBaffle3D_slave
+    {
+        type            mappedWall;
+        inGroups        3(wall mappedPatch baffleFacesThermoBaffle3DGroup_slave);
+        nFaces          16;
+        startFace       8106;
+        sampleMode      nearestPatchFace;
+        coupleGroup     baffleFacesThermoBaffle3DGroup_slave;
+    }
+)
+
+// ************************************************************************* //
